@@ -1,0 +1,42 @@
+---
+layout: base.njk
+title: Projects
+---
+
+<div class="win-window wide">
+  <div class="win-titlebar">
+    <img src="/img/folder.svg" alt="" class="win-titlebar-icon" />
+    <span class="win-titlebar-title">My Projects</span>
+    <div class="win-titlebar-buttons">
+      <button class="win-btn">✕</button>
+    </div>
+  </div>
+  <div class="win-content">
+    <p>Things I've built, am building, or am proud of.</p>
+
+    <div class="project-grid">
+      {% for project in collections.projects %}
+      <div class="project-card">
+        <h3>{{ project.data.emoji or "🔧" }} {{ project.data.title }}</h3>
+        <p>{{ project.data.description }}</p>
+        {% if project.data.tags and project.data.tags.length %}
+        <div class="project-tags">
+          {% for tag in project.data.tags %}
+          <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+        {% if project.data.link %}
+        <br />
+        <a href="{{ project.data.link }}" class="win98-btn">{{ project.data.linkText or "View →" }}</a>
+        {% endif %}
+      </div>
+      {% else %}
+      <p>No projects yet!</p>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="status-bar">
+    <span>{{ collections.projects.length }} object(s)</span>
+  </div>
+</div>

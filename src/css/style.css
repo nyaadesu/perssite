@@ -1,0 +1,607 @@
+/* ===== GLOBAL RESET & BASE ===== */
+:root {
+  --win98-teal: #008080;
+  --win98-gray: #c0c0c0;
+  --win98-dark: #808080;
+  --win98-title: #000080;
+  --win98-white: #ffffff;
+  --win98-black: #000000;
+  --win98-highlight: #000080;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Tahoma", "MS Sans Serif", "Arial", sans-serif;
+  font-size: 13px;
+  background: var(--win98-teal);
+  color: var(--win98-black);
+  min-height: 100vh;
+}
+
+/* ===== DESKTOP LAYOUT ===== */
+.desktop {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.desktop-area {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  overflow-y: auto;
+  padding-bottom: 60px; /* space for taskbar */
+}
+
+/* ===== PRIDE STRIPE ===== */
+.pride-stripe {
+  display: flex;
+  height: 4px;
+  flex-shrink: 0;
+}
+
+.pride-stripe span {
+  flex: 1;
+}
+
+/* ===== MENU BAR ===== */
+.menu-bar {
+  background: var(--win98-gray);
+  border-bottom: 2px solid var(--win98-dark);
+  display: flex;
+  align-items: center;
+  padding: 2px 4px;
+  gap: 2px;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff;
+  flex-shrink: 0;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  text-decoration: none;
+  color: var(--win98-black);
+  font-size: 12px;
+  border: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.menu-item:hover {
+  border-color: var(--win98-dark) var(--win98-white) var(--win98-white) var(--win98-dark);
+  background: var(--win98-gray);
+}
+
+.menu-item.active {
+  border-color: var(--win98-white) var(--win98-dark) var(--win98-dark) var(--win98-white);
+  background: var(--win98-gray);
+  box-shadow: inset 1px 1px #808080;
+}
+
+.menu-icon {
+  width: 16px;
+  height: 16px;
+  image-rendering: pixelated;
+}
+
+/* ===== TASKBAR ===== */
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 36px;
+  background: var(--win98-gray);
+  border-top: 2px solid var(--win98-white);
+  box-shadow: inset 0 1px #fff;
+  display: flex;
+  align-items: center;
+  padding: 2px 4px;
+  gap: 4px;
+  z-index: 100;
+}
+
+.start-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px 3px 6px;
+  font-weight: bold;
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  border: 2px solid;
+  border-color: var(--win98-white) var(--win98-dark) var(--win98-dark) var(--win98-white);
+  background: var(--win98-gray);
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff;
+}
+
+.start-button:active {
+  border-color: var(--win98-dark) var(--win98-white) var(--win98-white) var(--win98-dark);
+  box-shadow: inset 1px 1px #808080;
+}
+
+.start-icon {
+  width: 20px;
+  height: 20px;
+  image-rendering: pixelated;
+}
+
+.taskbar-divider {
+  width: 2px;
+  height: 28px;
+  border-left: 1px solid var(--win98-dark);
+  border-right: 1px solid var(--win98-white);
+  margin: 0 4px;
+}
+
+.taskbar-lang {
+  background: var(--win98-grey);
+  border: 1px solid;
+  border-color: var(--win98-dark) var(--win98-white) var(--win98-white) var(--win98-dark);
+  font-size: 11px;
+  font-weight: bold;
+  font-family: inherit;
+  padding: 1px 3px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  height: 22px;
+  min-width: 0;
+  margin-left: auto;
+}
+.taskbar-lang:active {
+  border-color: var(--win98-white) var(--win98-dark) var(--win98-dark) var(--win98-white);
+}
+.taskbar-clock {
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 2px 8px;
+  border: 1px solid;
+  border-color: var(--win98-dark) var(--win98-white) var(--win98-white) var(--win98-dark);
+  font-size: 11px;
+  line-height: 1.3;
+  min-width: 100px;
+  text-align: right;
+}
+
+/* ===== WINDOW PANELS ===== */
+.win-window {
+  background: var(--win98-gray);
+  border: 2px solid;
+  border-color: var(--win98-white) var(--win98-dark) var(--win98-dark) var(--win98-white);
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, 2px 2px 0 #000;
+  width: 100%;
+  max-width: 680px;
+}
+
+.win-window.wide {
+  max-width: 860px;
+}
+
+.win-titlebar {
+  background: linear-gradient(to right, var(--win98-title), #1084d0);
+  color: var(--win98-white);
+  padding: 3px 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  user-select: none;
+}
+
+.win-titlebar-icon {
+  width: 16px;
+  height: 16px;
+  image-rendering: pixelated;
+}
+
+.win-titlebar-title {
+  flex: 1;
+}
+
+.win-titlebar-buttons {
+  display: flex;
+  gap: 2px;
+}
+
+.win-btn {
+  flex: 0 0 23px !important;
+  width: 23px !important;
+  min-width: 23px !important;
+  max-width: 23px !important;
+  height: 23px !important;
+  min-height: 23px !important;
+  max-height: 23px !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 23px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: var(--win98-gray) !important;
+  border: 2px solid !important;
+  border-color: var(--win98-white) var(--win98-dark) var(--win98-dark) var(--win98-white) !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  color: #000 !important;
+  font-family: sans-serif !important;
+  letter-spacing: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.win-btn:active {
+  border-color: var(--win98-dark) var(--win98-white) var(--win98-white) var(--win98-dark);
+}
+
+.win-content {
+  padding: 12px;
+}
+
+/* ===== HOME PAGE ===== */
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  max-width: 860px;
+}
+
+.home-grid .win-window {
+  max-width: none;
+}
+
+.home-grid .span-2 {
+  grid-column: span 2;
+}
+
+/* ===== ABOUT / PROFILE ===== */
+.profile-area {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.profile-avatar {
+  width: 75px;
+  height: 75px;
+  image-rendering: pixelated;
+  border: 2px solid;
+  border-color: var(--win98-dark) var(--win98-white) var(--win98-white) var(--win98-dark);
+  flex-shrink: 0;
+  background: #fff;
+  object-fit: cover;
+}
+
+.profile-details p {
+  margin: 0 0 6px;
+}
+
+/* ===== BLOG LIST ===== */
+.post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.post-list li {
+  border-bottom: 1px solid var(--win98-dark);
+  padding: 8px 4px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.post-list li:last-child {
+  border-bottom: none;
+}
+
+.post-date {
+  font-size: 11px;
+  color: var(--win98-dark);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.post-list a {
+  color: var(--win98-title);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.post-list a:hover {
+  text-decoration: underline;
+}
+
+/* ===== BLOG POST PAGE ===== */
+.post-meta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--win98-dark);
+  font-size: 11px;
+  color: var(--win98-dark);
+}
+
+.post-body {
+  line-height: 1.7;
+}
+
+.post-body h1, .post-body h2, .post-body h3 {
+  color: var(--win98-title);
+  margin-top: 20px;
+}
+
+.post-body a {
+  color: var(--win98-title);
+}
+
+.post-body code {
+  background: #fff;
+  border: 1px solid var(--win98-dark);
+  padding: 1px 4px;
+  font-size: 12px;
+}
+
+.post-body pre {
+  background: #fff;
+  border: 2px solid;
+  border-color: var(--win98-dark) var(--win98-white) var(--win98-white) var(--win98-dark);
+  padding: 10px;
+  overflow-x: auto;
+  font-size: 12px;
+}
+
+.post-body pre code {
+  border: none;
+  padding: 0;
+}
+
+.post-body blockquote {
+  border-left: 4px solid var(--win98-title);
+  margin: 12px 0;
+  padding: 6px 12px;
+  background: #d4d0c8;
+}
+
+/* ===== PROJECTS ===== */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.project-card {
+  background: #fff;
+  border: 2px solid;
+  border-color: var(--win98-dark) var(--win98-white) var(--win98-white) var(--win98-dark);
+  padding: 10px;
+}
+
+.project-card h3 {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: var(--win98-title);
+}
+
+.project-card p {
+  margin: 0 0 8px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tag {
+  background: var(--win98-title);
+  color: #fff;
+  font-size: 10px;
+  padding: 1px 5px;
+}
+
+/* ===== STATUS BAR ===== */
+.status-bar {
+  background: var(--win98-gray);
+  border-top: 2px solid;
+  border-color: var(--win98-dark) var(--win98-white) var(--win98-white) var(--win98-dark);
+  padding: 3px 8px;
+  font-size: 11px;
+  color: var(--win98-dark);
+  display: flex;
+  gap: 12px;
+}
+
+/* ===== LINKS ===== */
+a {
+  color: var(--win98-title);
+}
+
+/* ===== UTILITY ===== */
+.win98-btn {
+  display: inline-block;
+  background: var(--win98-gray);
+  border: 2px solid;
+  border-color: var(--win98-white) var(--win98-dark) var(--win98-dark) var(--win98-white);
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff;
+  padding: 4px 16px;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--win98-black);
+}
+
+.win98-btn:hover {
+  background: #d4d0c8;
+}
+
+.win98-btn:active {
+  border-color: var(--win98-dark) var(--win98-white) var(--win98-white) var(--win98-dark);
+  box-shadow: inset 1px 1px #808080;
+}
+
+.back-link {
+  margin-top: 8px;
+  display: inline-block;
+}
+
+/* ===== START MENU ===== */
+.start-menu {
+  position: fixed;
+  bottom: 36px;
+  left: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: row;
+  background: var(--win98-gray);
+  border: 2px solid;
+  border-color: var(--win98-white) var(--win98-dark) var(--win98-dark) var(--win98-white);
+  box-shadow: 2px 2px 0 #000;
+}
+
+.start-menu-sidebar {
+  width: 26px;
+  background: linear-gradient(to top, #000080, #1084d0);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 8px 0;
+  flex-shrink: 0;
+}
+
+.start-menu-sidebar span {
+  color: rgba(255,255,255,0.35);
+  font-size: 16px;
+  font-weight: bold;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  letter-spacing: 2px;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.start-menu-items {
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+  min-width: 180px;
+}
+
+.start-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 8px;
+  text-decoration: none;
+  color: var(--win98-black);
+  font-size: 13px;
+  background: none;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.start-menu-item:hover {
+  background: var(--win98-title);
+  color: #fff;
+}
+
+.start-menu-item:hover img {
+  filter: brightness(10);
+}
+
+.start-menu-icon {
+  width: 24px;
+  height: 24px;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+}
+
+.start-menu-divider {
+  height: 1px;
+  background: var(--win98-dark);
+  margin: 4px 2px;
+  box-shadow: 0 1px 0 var(--win98-white);
+}
+
+.start-menu-shutdown {
+  color: var(--win98-black);
+}
+
+.start-menu-shutdown-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #ff8888, #cc0000);
+  border: 2px solid;
+  border-color: var(--win98-dark) var(--win98-white) var(--win98-white) var(--win98-dark);
+  flex-shrink: 0;
+  display: block;
+}
+
+/* ===== SITE FOOTER ===== */
+.site-footer {
+  text-align: center;
+  padding: 6px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  margin-bottom: 36px; /* clear taskbar */
+}
+
+/* ===== SCROLLBAR (webkit) ===== */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--win98-gray);
+  border: 1px solid var(--win98-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--win98-gray);
+  border: 2px solid;
+  border-color: var(--win98-white) var(--win98-dark) var(--win98-dark) var(--win98-white);
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-grid .span-2 {
+    grid-column: span 1;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .desktop-area {
+    padding: 8px;
+  }
+}

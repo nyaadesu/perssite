@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }} — {{ site.title }}</title>
+  <link rel="stylesheet" href="https://unpkg.com/98.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" href="/img/logo.svg" type="image/svg+xml" />
+</head>
+<body>
+  <div class="desktop">
+
+    <!-- Subtle trans flag accent stripe -->
+    <div class="pride-stripe">
+      <span style="background:#55cdfc"></span>
+      <span style="background:#f7a8b8"></span>
+      <span style="background:#ffffff"></span>
+      <span style="background:#f7a8b8"></span>
+      <span style="background:#55cdfc"></span>
+    </div>
+
+    <!-- Nav taskbar at top (like a menu bar) -->
+    <div class="menu-bar">
+      <a href="/" class="menu-item {% if page.url == '/' %}active{% endif %}">
+        <img src="/img/home.svg" alt="" class="menu-icon" /> <span data-i18n="nav-home">Home</span>
+      </a>
+      <a href="/about/" class="menu-item {% if page.url == '/about/' %}active{% endif %}">
+        <img src="/img/user.svg" alt="" class="menu-icon" /> <span data-i18n="nav-about">About</span>
+      </a>
+      <a href="/projects/" class="menu-item {% if page.url == '/projects/' %}active{% endif %}">
+        <img src="/img/folder.svg" alt="" class="menu-icon" /> <span data-i18n="nav-projects">Projects</span>
+      </a>
+      <a href="/blog/" class="menu-item {% if '/blog/' in page.url %}active{% endif %}">
+        <img src="/img/notepad.svg" alt="" class="menu-icon" /> <span data-i18n="nav-blog">Blog</span>
+      </a>
+    </div>
+
+    <!-- Main content area -->
+    <main class="desktop-area">
+      {{ content | safe }}
+    </main>
+
+    <!-- Footer strip -->
+    <div class="site-footer">
+      <span><span data-i18n="footer-made">made with</span> ♡ &nbsp;·&nbsp; ✡ &nbsp;·&nbsp; 🏳️‍⚧️</span>
+    </div>
+
+    <!-- Start menu -->
+    <div id="start-menu" class="start-menu" style="display:none;">
+      <div class="start-menu-sidebar">
+        <span>{{ site.title }}</span>
+      </div>
+      <div class="start-menu-items">
+        <a href="/" class="start-menu-item">
+          <img src="/img/home.svg" alt="" class="start-menu-icon" />
+          <span data-i18n="sm-home">Home</span>
+        </a>
+        <a href="/about/" class="start-menu-item">
+          <img src="/img/user.svg" alt="" class="start-menu-icon" />
+          <span data-i18n="sm-about">About</span>
+        </a>
+        <a href="/projects/" class="start-menu-item">
+          <img src="/img/folder.svg" alt="" class="start-menu-icon" />
+          <span data-i18n="sm-projects">Projects</span>
+        </a>
+        <a href="/blog/" class="start-menu-item">
+          <img src="/img/notepad.svg" alt="" class="start-menu-icon" />
+          <span data-i18n="sm-blog">Blog</span>
+        </a>
+        <div class="start-menu-divider"></div>
+        <button class="start-menu-item start-menu-shutdown" id="shutdown-btn">
+          <span class="start-menu-shutdown-dot"></span>
+          <span>Shut Down...</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Taskbar at bottom -->
+    <div class="taskbar">
+      <button class="start-button" id="start-btn">
+        <img src="/img/logo.svg" alt="" class="start-icon" />
+        <span>Start</span>
+      </button>
+      <div class="taskbar-divider"></div>
+      <button id="lang-toggle" class="taskbar-lang">EN</button>
+      <div class="taskbar-clock">
+        <span id="clock"></span>
+        <span id="date-display"></span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Kyubey Desktop Pet -->
+  <style>
+    #kyubey-pet { position:fixed; bottom:36px; left:200px; z-index:150; cursor:pointer; user-select:none; }
+    #kyubey-sprite {
+      image-rendering:pixelated;
+      background-repeat:no-repeat;
+      background-position-y:bottom;
+      transform-origin:center bottom;
+    }
+    @keyframes kyubey-walk {
+      from { background-position-x: 0; }
+      to   { background-position-x: -798px; }
+    }
+    @keyframes kyubey-stand {
+      from { background-position-x: 0; }
+      to   { background-position-x: -1056px; }
+    }
+    .kyubey-anim-walk  { width:133px; height:60px; background-image:url('/img/kyubey-walk.png');  background-size:798px 60px;  animation:kyubey-walk  1.1s steps(6, end) infinite; }
+    .kyubey-anim-stand { width:96px;  height:42px; background-image:url('/img/kyubey-stand.png'); background-size:1056px 42px; animation:kyubey-stand 1.4s steps(11, end) infinite; position:relative; top:4px; }
+  </style>
+  <div id="kyubey-pet">
+    <div id="kyubey-bubble" style="
+      display:none;
+      position:absolute;
+      bottom:65px;
+      left:50%;
+      transform:translateX(-50%);
+      background:#ffffff;
+      border:2px solid;
+      border-color:#ffffff #808080 #808080 #ffffff;
+      box-shadow:2px 2px 0 #000000;
+      padding:4px 8px;
+      font-size:10px;
+      font-family:Tahoma,sans-serif;
+      line-height:1.4;
+      text-align:center;
+      width:max-content;
+      max-width:160px;
+      white-space:normal;
+      pointer-events:none;
+    "></div>
+    <div id="kyubey-sprite" class="kyubey-anim-stand"></div>
+  </div>
+
+  <!-- Win98 dialog -->
+  <div id="win98-dialog" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.3); display:none; align-items:center; justify-content:center;">
+    <div class="win-window" style="max-width:320px; width:90%; box-shadow: 4px 4px 0 #000;">
+      <div class="win-titlebar" id="dialog-titlebar">
+        <img src="/img/logo.svg" alt="" class="win-titlebar-icon" />
+        <span class="win-titlebar-title" id="dialog-title">Message</span>
+        <div class="win-titlebar-buttons">
+          <button class="win-btn" onclick="closeDialog()">✕</button>
+        </div>
+      </div>
+      <div class="win-content" style="display:flex; gap:12px; align-items:flex-start;">
+        <div id="dialog-icon" style="font-size:32px; flex-shrink:0;">ℹ️</div>
+        <div>
+          <p id="dialog-message" style="margin:0 0 16px;"></p>
+          <button class="win98-btn" onclick="closeDialog()" autofocus>OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Clock
+    function updateClock() {
+      const now = new Date();
+      const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      const date = now.toLocaleDateString([], { month: 'short', day: 'numeric', year: 'numeric' });
+      document.getElementById('clock').textContent = time;
+      document.getElementById('date-display').textContent = date;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    // Dialog helpers
+    const dialog = document.getElementById('win98-dialog');
+    function showDialog(title, message, icon) {
+      document.getElementById('dialog-title').textContent = title;
+      document.getElementById('dialog-message').textContent = message;
+      document.getElementById('dialog-icon').textContent = icon || 'ℹ️';
+      dialog.style.display = 'flex';
+      dialog.querySelector('button[autofocus]').focus();
+    }
+    function closeDialog() {
+      dialog.style.display = 'none';
+    }
+    dialog.addEventListener('click', (e) => { if (e.target === dialog) closeDialog(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDialog(); });
+
+    // Close button messages
+    const closeMessages = [
+      ["You can't close the internet!", "Sorry, that's not how it works. The internet stays open.", '❌'],
+      ["Cute try!", "This window lives here now. It's cozy.", '🐱'],
+      ["Error: Window too adorable to close", "Operation aborted. Please try again never.", '🌸'],
+      ["Access Denied", "This website has been deemed too cute to be closed.", '✨'],
+    ];
+
+    // Start menu
+    const startMenu = document.getElementById('start-menu');
+    const startBtn  = document.getElementById('start-btn');
+
+    function toggleStartMenu() {
+      const open = startMenu.style.display !== 'none';
+      startMenu.style.display = open ? 'none' : 'flex';
+      startBtn.classList.toggle('active', !open);
+    }
+    function closeStartMenu() {
+      startMenu.style.display = 'none';
+      startBtn.classList.remove('active');
+    }
+
+    startBtn.addEventListener('click', (e) => { e.stopPropagation(); toggleStartMenu(); });
+    document.addEventListener('click', (e) => {
+      if (!startMenu.contains(e.target)) closeStartMenu();
+    });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeStartMenu(); });
+
+    document.getElementById('shutdown-btn').addEventListener('click', () => {
+      closeStartMenu();
+      showDialog(
+        'Shut Down',
+        'It is now safe to turn off your internet.',
+        '🔴'
+      );
+    });
+
+    // Wire up window close buttons
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.win-titlebar-buttons .win-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const [title, msg, icon] = closeMessages[Math.floor(Math.random() * closeMessages.length)];
+          showDialog(title, msg, icon);
+        });
+      });
+    });
+
+    // === KYUBEY DESKTOP PET ===
+    (function() {
+      const petEl  = document.getElementById('kyubey-pet');
+      const bubble = document.getElementById('kyubey-bubble');
+      const sprite = document.getElementById('kyubey-sprite');
+      if (!petEl) return;
+
+      const quotes = [
+        "Won't you make a contract with me?",
+        "I simply can't understand human feelings.",
+        "All I did was explain the facts.",
+        "Isn't that a good deal?",
+        "You have so much potential.",
+        "I understand.",
+        "There's no such thing as hope without despair.",
+        "Human wishes fascinate me.",
+        "The universe's entropy must be reversed.",
+        "You haven't signed the contract yet.",
+        "A wish for anything you desire — isn't that wonderful?",
+        "I bear no ill will. I'm just a messenger.",
+      ];
+
+      const contractDialogs = [
+        ["Contract Offer", "Won't you make a contract with me and become a magical girl? ✨", "🌸"],
+        ["Important Proposal", "I've been watching you. You have a lot of potential, you know.", "⭐"],
+        ["Terms & Conditions", "In exchange for a single wish, you'll fight witches. Seems fair, right?", "📜"],
+      ];
+
+      let x = Math.max(10, Math.floor(Math.random() * (window.innerWidth - 70)));
+      let dir = 1;
+      let state = 'walking';
+      let timer = 0;
+      let step  = 0;
+      let frameCount = 0;
+      const SPEED = 0.35;
+
+      function showBubble(text) {
+        bubble.textContent = text;
+        bubble.style.display = 'block';
+        state = 'talking';
+        timer = Math.max(120, text.length * 6);
+      }
+
+      function hideBubble() { bubble.style.display = 'none'; }
+
+      function tick() {
+        frameCount++;
+        if (timer > 0) timer--;
+
+        if (state === 'walking') {
+          x += SPEED * dir;
+          const maxX = window.innerWidth - sprite.offsetWidth - 10;
+          if (x < 5)    { x = 5;    dir =  1; }
+          if (x > maxX) { x = maxX; dir = -1; }
+          sprite.className = 'kyubey-anim-walk';
+
+          if (frameCount % 120 === 0 && Math.random() < 0.85) {
+            if (Math.random() < 0.5) {
+              showBubble(quotes[Math.floor(Math.random() * quotes.length)]);
+            }
+            state = 'idle'; timer = 400 + Math.floor(Math.random() * 600);
+          }
+        } else {
+          sprite.className = 'kyubey-anim-stand';
+          if (timer <= 0) {
+            state = 'walking';
+            hideBubble();
+            if (Math.random() < 0.4) dir *= -1;
+          }
+        }
+
+        petEl.style.left = Math.round(x) + 'px';
+
+        const bob = state === 'walking' ? Math.round(Math.sin(step * 0.18) * 1.5) : 0;
+        const flip = dir === -1 ? 'scaleX(-1)' : 'scaleX(1)';
+        sprite.style.transform = flip;
+
+        requestAnimationFrame(tick);
+      }
+
+      petEl.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showBubble(quotes[Math.floor(Math.random() * quotes.length)]);
+        if (Math.random() < 0.3) {
+          const [t, m, i] = contractDialogs[Math.floor(Math.random() * contractDialogs.length)];
+          setTimeout(() => showDialog(t, m, i), 500);
+        }
+      });
+
+      tick();
+    })();
+  </script>
+  <script src="/js/i18n.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" shape-rendering="crispEdges">
+  <!-- === TAIL (drawn first, behind body) === -->
+  <rect x="32" y="32" width="4"  height="2"  fill="#d8d8d8"/>
+  <rect x="34" y="26" width="4"  height="8"  fill="#d8d8d8"/>
+  <rect x="36" y="22" width="4"  height="6"  fill="#d8d8d8"/>
+  <rect x="34" y="18" width="4"  height="6"  fill="#d8d8d8"/>
+  <rect x="30" y="16" width="6"  height="4"  fill="#d8d8d8"/>
+  <!-- tail curl tip -->
+  <rect x="38" y="20" width="4"  height="6"  fill="#d8d8d8"/>
+  <rect x="40" y="24" width="2"  height="4"  fill="#d8d8d8"/>
+  <rect x="36" y="18" width="4"  height="4"  fill="#e8e8e8"/>
+
+  <!-- === BODY === -->
+  <rect x="17" y="32" width="14" height="12" fill="#e4e4e4"/>
+  <rect x="15" y="34" width="18" height="9"  fill="#e8e8e8"/>
+  <!-- body segment line -->
+  <rect x="16" y="37" width="16" height="1"  fill="#cccccc"/>
+
+  <!-- === PAWS === -->
+  <rect x="14" y="42" width="8"  height="5"  fill="#e0e0e0"/>
+  <rect x="26" y="42" width="8"  height="5"  fill="#e0e0e0"/>
+  <rect x="14" y="45" width="2"  height="2"  fill="#c0c0c0"/>
+  <rect x="17" y="45" width="2"  height="2"  fill="#c0c0c0"/>
+  <rect x="26" y="45" width="2"  height="2"  fill="#c0c0c0"/>
+  <rect x="29" y="45" width="2"  height="2"  fill="#c0c0c0"/>
+
+  <!-- === LEFT EAR === -->
+  <rect x="10" y="0"  width="8"  height="12" fill="#e8e8e8"/>
+  <rect x="11" y="1"  width="6"  height="10" fill="#f0f0f0"/>
+  <!-- left ear ring (pink band) -->
+  <rect x="9"  y="7"  width="10" height="4"  fill="#eda8bf"/>
+  <rect x="10" y="6"  width="8"  height="2"  fill="#eda8bf"/>
+  <rect x="10" y="11" width="8"  height="1"  fill="#e090a8"/>
+
+  <!-- === RIGHT EAR === -->
+  <rect x="30" y="0"  width="8"  height="12" fill="#e8e8e8"/>
+  <rect x="31" y="1"  width="6"  height="10" fill="#f0f0f0"/>
+  <!-- right ear ring -->
+  <rect x="29" y="7"  width="10" height="4"  fill="#eda8bf"/>
+  <rect x="30" y="6"  width="8"  height="2"  fill="#eda8bf"/>
+  <rect x="30" y="11" width="8"  height="1"  fill="#e090a8"/>
+
+  <!-- === HEAD (round white) === -->
+  <rect x="10" y="8"  width="28" height="26" fill="#f2f2f2"/>
+  <rect x="8"  y="10" width="32" height="22" fill="#f4f4f4"/>
+  <rect x="6"  y="12" width="36" height="18" fill="#f4f4f4"/>
+  <rect x="4"  y="14" width="40" height="14" fill="#f6f6f6"/>
+
+  <!-- === FOREHEAD DIAMOND MARKING === -->
+  <rect x="23" y="10" width="2"  height="2"  fill="#e898b8"/>
+  <rect x="22" y="12" width="4"  height="2"  fill="#e898b8"/>
+  <rect x="21" y="13" width="6"  height="2"  fill="#e898b8"/>
+  <rect x="22" y="15" width="4"  height="2"  fill="#e898b8"/>
+  <rect x="23" y="17" width="2"  height="2"  fill="#e898b8"/>
+
+  <!-- === LEFT EYE (large pinkish-red oval) === -->
+  <rect x="8"  y="17" width="14" height="10" fill="#a81028"/>
+  <rect x="9"  y="15" width="12" height="14" fill="#a81028"/>
+  <rect x="10" y="14" width="10" height="16" fill="#a81028"/>
+  <!-- iris mid tone -->
+  <rect x="10" y="17" width="10" height="8"  fill="#cc2040"/>
+  <rect x="11" y="16" width="8"  height="10" fill="#cc2040"/>
+  <!-- iris bright -->
+  <rect x="11" y="18" width="8"  height="6"  fill="#e83060"/>
+  <!-- pupil -->
+  <rect x="13" y="18" width="5"  height="7"  fill="#60000c"/>
+  <!-- catchlight (top right) -->
+  <rect x="15" y="15" width="4"  height="4"  fill="#ffffff"/>
+  <rect x="14" y="16" width="3"  height="3"  fill="#fff0f0"/>
+  <!-- lower glint -->
+  <rect x="10" y="25" width="4"  height="2"  fill="#ffb8cc"/>
+
+  <!-- === RIGHT EYE === -->
+  <rect x="26" y="17" width="14" height="10" fill="#a81028"/>
+  <rect x="27" y="15" width="12" height="14" fill="#a81028"/>
+  <rect x="28" y="14" width="10" height="16" fill="#a81028"/>
+  <rect x="28" y="17" width="10" height="8"  fill="#cc2040"/>
+  <rect x="29" y="16" width="8"  height="10" fill="#cc2040"/>
+  <rect x="29" y="18" width="8"  height="6"  fill="#e83060"/>
+  <rect x="30" y="18" width="5"  height="7"  fill="#60000c"/>
+  <rect x="31" y="15" width="4"  height="4"  fill="#ffffff"/>
+  <rect x="30" y="16" width="3"  height="3"  fill="#fff0f0"/>
+  <rect x="34" y="25" width="4"  height="2"  fill="#ffb8cc"/>
+
+  <!-- === NOSE === -->
+  <rect x="22" y="27" width="4"  height="2"  fill="#b09090"/>
+  <rect x="23" y="26" width="2"  height="1"  fill="#b09090"/>
+
+  <!-- === MOUTH (gentle smile) === -->
+  <rect x="18" y="30" width="12" height="1"  fill="#b88888"/>
+  <rect x="17" y="29" width="2"  height="2"  fill="#b88888"/>
+  <rect x="29" y="29" width="2"  height="2"  fill="#b88888"/>
+</svg>

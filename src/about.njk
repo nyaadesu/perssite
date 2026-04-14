@@ -1,0 +1,153 @@
+---
+layout: base.njk
+title: About
+---
+
+<style>
+  .nerv-window .win-titlebar {
+    background: linear-gradient(to right, #8b0000, #cc0000);
+  }
+  .nerv-terminal {
+    background: #000;
+    color: #00ccff;
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+    padding: 14px;
+    line-height: 1.7;
+    border: 1px solid #004466;
+  }
+  .nerv-terminal .nt-label {
+    color: #ff6600;
+    font-weight: bold;
+    display: inline-block;
+    min-width: 180px;
+  }
+  .nerv-terminal .nt-value { color: #00ffcc; }
+  .nerv-terminal .nt-header {
+    color: #ff4444;
+    font-weight: bold;
+    border-bottom: 1px solid #cc0000;
+    margin-bottom: 10px;
+    padding-bottom: 4px;
+    letter-spacing: 2px;
+  }
+  .nerv-terminal .nt-section {
+    color: #ff6600;
+    margin: 12px 0 4px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .nerv-terminal .nt-bar-track {
+    display: inline-block;
+    width: 120px;
+    background: #003344;
+    height: 10px;
+    vertical-align: middle;
+    border: 1px solid #006688;
+  }
+  .nerv-terminal .nt-bar-fill {
+    display: block;
+    height: 100%;
+    background: linear-gradient(to right, #006688, #00ccff);
+  }
+  .nerv-terminal .nt-classified { color: #ff4444; font-weight: bold; letter-spacing: 3px; font-size: 10px; }
+  .nerv-terminal .nt-redacted { background: #cc0000; color: #cc0000; padding: 0 2px; user-select: none; }
+  .nerv-terminal .nt-blink { animation: nerv-blink 1s step-end infinite; }
+  .nerv-terminal .nt-stamp {
+    display: inline-block;
+    border: 3px solid #cc0000;
+    color: #cc0000;
+    padding: 2px 8px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    transform: rotate(-12deg);
+    opacity: 0.85;
+    float: right;
+    margin-top: -30px;
+    margin-right: 10px;
+  }
+  .nerv-terminal .nt-report {
+    color: #aaddee;
+    border-left: 2px solid #004466;
+    padding-left: 10px;
+    margin: 4px 0;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .nerv-terminal .nt-report a { color: #00ffcc; }
+  @keyframes nerv-blink { 0%,100%{opacity:1} 50%{opacity:0} }
+</style>
+
+<div class="win-window nerv-window">
+  <div class="win-titlebar">
+    <img src="/img/user.svg" alt="" class="win-titlebar-icon" style="filter:brightness(10);" />
+    <span class="win-titlebar-title">NERV MAGI SYSTEM — PERSONNEL FILE [RESTRICTED]</span>
+    <div class="win-titlebar-buttons">
+      <button class="win-btn">✕</button>
+    </div>
+  </div>
+  <div class="nerv-terminal">
+    <div class="nt-header">
+      ██ NERV HQ — MAGI UNIFIED DATABASE ██&nbsp;
+      <span class="nt-classified nt-blink">▌ AUTHORIZED ACCESS ONLY ▌</span>
+    </div>
+
+    <img src="/img/avatar.svg" alt="Subject photo" style="float:right;margin:0 0 12px 16px;border:2px solid #cc0000;image-rendering:pixelated;filter:sepia(0.3) hue-rotate(160deg) saturate(0.8);" width="75" height="75" />
+    <div class="nt-stamp">CLASSIFIED</div>
+
+    <div><span class="nt-label">DESIGNATION:</span> <span class="nt-value">Arielle / nya</span></div>
+    <div><span class="nt-label">CLEARANCE:</span> <span class="nt-value">NERV-2 / MAGI READ ACCESS</span></div>
+    <div><span class="nt-label">LOCATION:</span> <span class="nt-value">🇳🇱 Netherlands</span></div>
+    <div><span class="nt-label">CONTACT:</span> <span class="nt-value"><a href="mailto:ariel@hart.cat" style="color:#00ffcc;">ariel@hart.cat</a> / <a href="https://github.hart.cat" style="color:#00ffcc;">github.hart.cat</a></span></div>
+
+    <div class="nt-section">// SUBJECT REPORT</div>
+    <div class="nt-report">
+      Arielle (alias: nya) is a networking-focused technologist with a preference for working at the
+      infrastructure layer rather than the surface. Happiest when configuring things other people
+      would rather not think about.
+    </div>
+    <div class="nt-report">
+      Outside of technical activity, subject maintains a curated interest in moe anime, wholesome
+      yuri, and games of questionable time efficiency. Has a documented weakness for anything
+      obscure, forgotten, or weird. The older and stranger, the better.
+    </div>
+
+    <div class="nt-section">// SYNCHRONIZATION DATA</div>
+    <div><span class="nt-label">CRINGE:</span> <span class="nt-bar-track"><span class="nt-bar-fill" style="width:92%"></span></span> <span class="nt-value"> 92%</span></div>
+    <div><span class="nt-label">CUTE TOLERANCE:</span> <span class="nt-bar-track"><span class="nt-bar-fill" style="width:100%"></span></span> <span class="nt-value"> 100%</span></div>
+    <div><span class="nt-label">CATGIRL AFFINITY:</span> <span class="nt-bar-track"><span class="nt-bar-fill" style="width:95%"></span></span> <span class="nt-value"> 95%</span></div>
+    <div><span class="nt-label">WOW RAID ATTENDANCE:</span> <span class="nt-bar-track"><span class="nt-bar-fill" style="width:71%"></span></span> <span class="nt-value"> 71%</span></div>
+
+    <div class="nt-section">// ANIME</div>
+    <div class="nt-report">
+      Known favourites include Madoka Magica, Evangelion, Yuru Yuri and Demon Girl Next Door.
+      Anything CGDCT or wholesome yuri is basically guaranteed to be watched.
+    </div>
+
+    <div class="nt-section">// GAMING</div>
+    <div class="nt-report">
+      Gaming activity centres around World of Warcraft and Diablo, with varying levels of commitment.
+    </div>
+
+    <div class="nt-section">// THIS SITE</div>
+    <div class="nt-report">
+      Built with Eleventy and 98.css. Hosted on Nekoweb. This site is an exercise in vibe coding with Claude Code.
+    </div>
+
+    <div class="nt-section">// MAGI VERDICT</div>
+    <div>
+      <span style="color:#ff4444;">MELCHIOR-1:</span> <span class="nt-value">APPROVED</span> &nbsp;
+      <span style="color:#ff4444;">BALTHASAR-2:</span> <span class="nt-value">APPROVED</span> &nbsp;
+      <span style="color:#ff4444;">CASPAR-3:</span> <span class="nt-value">APPROVED</span>
+    </div>
+
+    <div style="margin-top:14px;color:#004466;">████████████████████████████████████████████████████████████</div>
+    <div style="color:#004466;font-size:10px;">NERV/MAGI SYS v3.0 · GEHIRN RESEARCH · <span class="nt-blink">▌</span></div>
+  </div>
+  <div class="status-bar">
+    <span>MAGI SYNC: OK</span>
+    <span><span class="nt-blink" style="color:#c00;">● REC</span></span>
+  </div>
+</div>

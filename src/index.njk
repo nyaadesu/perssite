@@ -1,0 +1,127 @@
+---
+layout: base.njk
+title: Home
+---
+
+<div class="home-grid">
+
+  <!-- Welcome window -->
+  <div class="win-window span-2">
+    <div class="win-titlebar">
+      <img src="/img/home.svg" alt="" class="win-titlebar-icon" />
+      <span class="win-titlebar-title" data-i18n="welcome-title">Welcome to my corner of the internet</span>
+      <div class="win-titlebar-buttons">
+        <button class="win-btn">✕</button>
+      </div>
+    </div>
+    <div class="win-content">
+      <div class="profile-area">
+        <img src="/img/avatar.svg" alt="Avatar" class="profile-avatar" />
+        <div class="profile-details">
+          <p data-i18n-html="intro-greeting"><strong>Hi, I'm Arielle!</strong> 👋</p>
+          <p data-i18n-html="intro-1">Welcome to my cute little website! I'm into <em>computer networking</em>, <em>moe anime</em> and <em>niche tech</em>.</p>
+          <p data-i18n-html="intro-2">I'll put here things I find interesting, bloggy essays and generally just personal stuffs.</p>
+          <p data-i18n-html="intro-3">Grown tired of the sameness of normie net, I thought it would be a neat idea to go back to our roots and join <strong>nekonet</strong>, a revival of the past, to an era where we all had cringe websites, used forums and nolifed on irc, but were all the better for it!</p>
+          <p data-i18n-html="intro-links">Have a look around: <a href="/blog/">posts</a>, <a href="/projects/">projects</a>, or <a href="/about/">about me</a>.</p>
+        </div>
+      </div>
+    </div>
+    <div class="status-bar">
+      <span><a href="https://nekoweb.org/"><img src="https://nekoweb.org/assets/buttons/button7.gif" alt="Nekoweb" style="vertical-align:middle;image-rendering:pixelated;"></a></span><!-- button by avas.space -->
+      <span style="margin-left:auto;">שלום!</span>
+    </div>
+  </div>
+
+  <!-- Recent posts -->
+  <div class="win-window">
+    <div class="win-titlebar">
+      <img src="/img/notepad.svg" alt="" class="win-titlebar-icon" />
+      <span class="win-titlebar-title" data-i18n="recent-posts">Recent Blog Posts</span>
+      <div class="win-titlebar-buttons">
+        <button class="win-btn">✕</button>
+      </div>
+    </div>
+    <div class="win-content">
+      {% if collections.posts.length %}
+        <ul class="post-list">
+          {% for post in collections.posts.slice(0, 5) %}
+            <li>
+              <span class="post-date">{{ post.date | readableDate }}</span>
+              <a href="{{ post.url }}">{{ post.data.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p data-i18n="no-posts">No posts yet. Check back soon!</p>
+      {% endif %}
+    </div>
+    <div class="status-bar">
+      <span><a href="/blog/" class="win98-btn" data-i18n="view-all-posts">View all posts →</a></span>
+      <span style="margin-left:auto;"><a href="/feed.xml" class="win98-btn" title="RSS Feed">📡 RSS</a></span>
+    </div>
+  </div>
+
+  <!-- What I'm Up To -->
+  <div class="win-window">
+    <div class="win-titlebar">
+      <img src="/img/folder.svg" alt="" class="win-titlebar-icon" />
+      <span class="win-titlebar-title" data-i18n="whats-up">What I'm Up To</span>
+      <div class="win-titlebar-buttons">
+        <button class="win-btn">✕</button>
+      </div>
+    </div>
+    <div class="win-content">
+      <p><strong>📡 <span data-i18n="label-interest">Interested In:</span></strong> <span data-i18n="val-interest">Computer Networking & Niche Tech</span></p>
+      <p><strong>🌸 <span data-i18n="label-watching">Watching:</span></strong> <span data-i18n="val-watching">CGDCT, Wholesome Yuri</span></p>
+      <p><strong>💻 <span data-i18n="label-working">Working On:</span></strong> <span data-i18n="val-working">Learning Claude, Studying for CompTIA</span></p>
+      <p><strong>🐾 <span data-i18n="label-into">Into:</span></strong> <span data-i18n="val-into">Maids and Catgirls</span></p>
+      <p><strong>📍 <span data-i18n="label-based">Based In:</span></strong> <span data-i18n="val-based">🇳🇱 Netherlands</span></p>
+    </div>
+  </div>
+
+  <!-- IRC status window -->
+  <div class="win-window span-2">
+    <div class="win-titlebar" style="background:linear-gradient(to right,#1a1a2e,#16213e);">
+      <img src="/img/notepad.svg" alt="" class="win-titlebar-icon" style="filter:brightness(10);" />
+      <span class="win-titlebar-title">mIRC — #nya @ irc.hart.cat</span>
+      <div class="win-titlebar-buttons">
+        <button class="win-btn">✕</button>
+      </div>
+    </div>
+    <div style="background:#0d0d1a;font-family:'Courier New',monospace;font-size:12px;display:flex;height:160px;">
+      <!-- Channel list sidebar -->
+      <div style="width:110px;border-right:1px solid #333;padding:4px;flex-shrink:0;">
+        <div style="color:#888;font-size:10px;margin-bottom:4px;">Channels</div>
+        <div style="color:#00aaff;padding:2px 4px;background:#111;">#nya</div>
+        <div style="color:#555;padding:2px 4px;">#madoka</div>
+        <div style="color:#555;padding:2px 4px;">#yuru-yuri</div>
+        <div style="color:#555;padding:2px 4px;">#evangelion</div>
+        <div style="color:#555;padding:2px 4px;">#networking</div>
+        <div style="color:#555;padding:2px 4px;">#wow-classic</div>
+        <div style="color:#555;padding:2px 4px;">#diablo</div>
+      </div>
+      <!-- Chat area -->
+      <div style="flex:1;padding:6px 10px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:1px;">
+        <div><span style="color:#888;">* nya has joined #nya</span></div>
+        <div><span style="color:#888;">&lt;ChanServ&gt;</span> <span style="color:#ccc;">[#nya] Welcome. Don't run away.</span></div>
+        <div><span style="color:#00ff88;">&lt;nya&gt;</span> <span style="color:#ccc;">hey o/</span></div>
+        <div><span style="color:#888;">* nya is interested in networking, anime, and niche tech</span></div>
+        <div>
+          <span style="color:#888;">* nya sets topic:</span>
+          <span style="color:#ffcc00;"> watching CGDCT | studying for CompTIA | learning Claude | <a href="/about/" style="color:#00aaff;">/whois nya</a></span>
+        </div>
+      </div>
+      <!-- Nicklist -->
+      <div style="width:80px;border-left:1px solid #333;padding:4px;flex-shrink:0;">
+        <div style="color:#888;font-size:10px;margin-bottom:4px;">2 users</div>
+        <div style="color:#00ff88;font-size:11px;">@nya</div>
+        <div style="color:#555;font-size:11px;">ChanServ</div>
+      </div>
+    </div>
+    <div style="background:#0d0d1a;border-top:1px solid #333;padding:3px 6px;display:flex;align-items:center;gap:6px;">
+      <span style="color:#555;font-family:'Courier New',monospace;font-size:11px;">[#nya]</span>
+      <div style="flex:1;background:#000;border:1px solid #333;padding:2px 6px;font-family:'Courier New',monospace;font-size:11px;color:#888;">Type a message...</div>
+    </div>
+  </div>
+
+</div>

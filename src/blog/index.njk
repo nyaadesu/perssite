@@ -1,0 +1,32 @@
+---
+layout: base.njk
+title: Blog
+---
+
+<div class="win-window">
+  <div class="win-titlebar">
+    <img src="/img/notepad.svg" alt="" class="win-titlebar-icon" />
+    <span class="win-titlebar-title">Blog</span>
+    <div class="win-titlebar-buttons">
+      <button class="win-btn">✕</button>
+    </div>
+  </div>
+  <div class="win-content">
+    {% if collections.posts.length %}
+      <ul class="post-list">
+        {% for post in collections.posts %}
+          <li>
+            <span class="post-date">{{ post.date | readableDate }}</span>
+            <a href="{{ post.url }}">{{ post.data.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No posts yet, stay tuned!</p>
+    {% endif %}
+  </div>
+  <div class="status-bar">
+    <span>{{ collections.posts.length }} post(s)</span>
+    <span><a href="/feed.xml" title="RSS Feed">📡 RSS</a></span>
+  </div>
+</div>

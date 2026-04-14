@@ -1,0 +1,36 @@
+---
+layout: base.njk
+---
+
+<div class="win-window">
+  <div class="win-titlebar">
+    <img src="/img/notepad.svg" alt="" class="win-titlebar-icon" />
+    <span class="win-titlebar-title">{{ title }} — Blog</span>
+    <div class="win-titlebar-buttons">
+      <button class="win-btn">✕</button>
+    </div>
+  </div>
+  <div class="win-content">
+    <div class="post-meta">
+      <span>📅 {{ page.date | readableDate }}</span>
+      {% if tags %}
+        <span>
+          🏷️
+          {% for tag in tags %}
+            {% if tag != "post" %}{{ tag }}{% if not loop.last %}, {% endif %}{% endif %}
+          {% endfor %}
+        </span>
+      {% endif %}
+    </div>
+
+    <div class="post-body">
+      {{ content | safe }}
+    </div>
+
+    <br />
+    <a href="/blog/" class="win98-btn back-link">← Back to all posts</a>
+  </div>
+  <div class="status-bar">
+    <span>{{ title }}</span>
+  </div>
+</div>
