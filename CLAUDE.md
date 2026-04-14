@@ -33,12 +33,13 @@ npm run build
 ```
 Eleventy builds take **~2 minutes** in the Bash tool (low CPU priority). Run in background. The user can also run it themselves in Ghostty for full speed.
 
-### Deploying to Nekoweb
-Only zip when the user explicitly asks to upload:
-```
-cd _site && zip -r ~/Desktop/ariel-hart-cat.zip .
-```
-Upload the zip at nekoweb.org — it extracts into the site root.
+### Deploying
+Deployment is fully automated via GitHub Actions (`.github/workflows/deploy.yml`).
+Push to `main` → builds `_site/` → deploys to both:
+- **GitHub Pages** at `ariel.hart.cat`
+- **Nekoweb** at `nyadesu.nekoweb.org` (zip imported to `/nyadesu.nekoweb.org`)
+
+Repo: `github.com/nyaadesu/perssite`. Secret `NEKOWEB_API_KEY` must be set in repo settings.
 
 ## Key files
 
