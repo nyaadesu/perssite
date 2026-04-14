@@ -68,5 +68,5 @@ jobs:
           curl -sf -X POST \
             -H "Authorization: $NEKOWEB_API_KEY" \
             --data-urlencode "id=$UPLOAD_ID" \
-            --data-urlencode "path=/" \
+            --data-urlencode "path=/nyadesu.nekoweb.org" \
             https://nekoweb.org/api/files/import/$UPLOAD_ID
