@@ -78,6 +78,182 @@ title: About
   }
   .nerv-terminal .nt-report a { color: #00ffcc; }
   @keyframes nerv-blink { 0%,100%{opacity:1} 50%{opacity:0} }
+  .seele-window .win-titlebar { background: #000; }
+  .seele-window .win-titlebar-title { letter-spacing: 1px; font-size: 11px; }
+  .seele-svg { background: #050505; display: block; width: 100%; }
+
+  /* MAGI System Monitor */
+  .magi-monitor .win-titlebar { background: linear-gradient(to right, #1a0a00, #4a2000); }
+  .magi-panel {
+    background: #0a0a0a;
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    padding: 12px;
+    color: #ff8800;
+    line-height: 1.6;
+    border: 1px solid #331800;
+  }
+  .magi-panel .magi-header {
+    text-align: center;
+    color: #ff4400;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 10px;
+    border-bottom: 1px solid #331800;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+  }
+  .magi-nodes {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .magi-node {
+    flex: 1;
+    border: 1px solid #332200;
+    padding: 8px;
+    background: #0d0800;
+    text-align: center;
+  }
+  .magi-node-name {
+    color: #ff6600;
+    font-weight: bold;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+  }
+  .magi-node-aspect {
+    color: #664400;
+    font-size: 8px;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .magi-node-status {
+    display: inline-block;
+    padding: 1px 6px;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  .magi-node-status.online {
+    color: #00ff88;
+    border: 1px solid #00ff88;
+  }
+  .magi-readings {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 16px;
+    margin-bottom: 12px;
+    font-size: 11px;
+  }
+  .magi-readings .mr-label { color: #886600; }
+  .magi-readings .mr-value { color: #ffaa00; text-align: right; }
+  .magi-readings .mr-warn { color: #ff4400; }
+  .magi-log {
+    border: 1px solid #221500;
+    background: #060400;
+    padding: 8px;
+    font-size: 10px;
+    line-height: 1.8;
+    max-height: 140px;
+    overflow: hidden;
+  }
+  .magi-log-line { color: #886600; }
+  .magi-log-line .log-time { color: #443300; }
+  .magi-log-line .log-ok { color: #00cc66; }
+  .magi-log-line .log-warn { color: #ff6600; }
+  .magi-log-line .log-crit { color: #ff2200; }
+  .magi-pattern {
+    display: inline-block;
+    padding: 1px 5px;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-left: 4px;
+  }
+  .magi-pattern.blue { color: #0088ff; border: 1px solid #0088ff; }
+  .magi-pattern.orange { color: #ff6600; border: 1px solid #ff6600; }
+
+  /* Dummy Plug Terminal */
+  .dp-window .win-titlebar { background: linear-gradient(to right, #001a00, #003300); }
+  .dp-terminal {
+    background: #000a00;
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    padding: 12px;
+    color: #00cc44;
+    line-height: 1.8;
+    border: 1px solid #003300;
+    min-height: 200px;
+  }
+  .dp-terminal .dp-header {
+    color: #00ff66;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 10px;
+    text-align: center;
+    border-bottom: 1px solid #003300;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+  }
+  .dp-line {
+    opacity: 0;
+    animation: dp-appear 0.1s forwards;
+  }
+  .dp-line:nth-child(2)  { animation-delay: 0.3s; }
+  .dp-line:nth-child(3)  { animation-delay: 0.7s; }
+  .dp-line:nth-child(4)  { animation-delay: 1.0s; }
+  .dp-line:nth-child(5)  { animation-delay: 1.4s; }
+  .dp-line:nth-child(6)  { animation-delay: 1.7s; }
+  .dp-line:nth-child(7)  { animation-delay: 2.1s; }
+  .dp-line:nth-child(8)  { animation-delay: 2.5s; }
+  .dp-line:nth-child(9)  { animation-delay: 2.8s; }
+  .dp-line:nth-child(10) { animation-delay: 3.2s; }
+  .dp-line:nth-child(11) { animation-delay: 3.5s; }
+  .dp-line:nth-child(12) { animation-delay: 3.9s; }
+  .dp-line:nth-child(13) { animation-delay: 4.3s; }
+  .dp-line:nth-child(14) { animation-delay: 4.7s; }
+  .dp-line:nth-child(15) { animation-delay: 5.1s; }
+  .dp-line:nth-child(16) { animation-delay: 5.5s; }
+  .dp-line:nth-child(17) { animation-delay: 6.0s; }
+  .dp-line:nth-child(18) { animation-delay: 6.5s; }
+  @keyframes dp-appear { to { opacity: 1; } }
+  .dp-ok { color: #00ff66; }
+  .dp-warn { color: #ffaa00; }
+  .dp-err { color: #ff3333; }
+  .dp-sys { color: #007733; }
+  .dp-dim { color: #005522; }
+  .dp-highlight { color: #00ffaa; font-weight: bold; }
+  .dp-cursor {
+    display: inline-block;
+    width: 7px;
+    height: 12px;
+    background: #00cc44;
+    animation: nerv-blink 0.8s step-end infinite;
+    vertical-align: middle;
+  }
+
+  /* Side-by-side layout for Tree & Terminal */
+  .seele-dp-container {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .seele-dp-container .win-window {
+    flex: 1;
+    margin-top: 0;
+  }
+  .seele-dp-container .seele-window {
+    min-width: 0;
+  }
+  .seele-dp-container .dp-window {
+    min-width: 0;
+  }
+  @media (max-width: 1200px) {
+    .seele-dp-container {
+      flex-direction: column;
+    }
+  }
 </style>
 
 <div class="win-window nerv-window">
@@ -136,6 +312,12 @@ title: About
       Built with Eleventy and 98.css. Hosted on Nekoweb. This site is an exercise in vibe coding with Claude Code.
     </div>
 
+    <div class="nt-section">// SOUL COMPOSITION — KABBALISTIC ANALYSIS</div>
+    <div><span class="nt-label">נשמה (NESHAMA):</span> <span class="nt-bar-track"><span class="nt-bar-fill" style="width:88%"></span></span> <span class="nt-value"> DIVINE INTELLECT — 88%</span></div>
+    <div><span class="nt-label">רוח (RUACH):</span> <span class="nt-bar-track"><span class="nt-bar-fill" style="width:94%"></span></span> <span class="nt-value"> SPIRIT / EMOTION — 94%</span></div>
+    <div><span class="nt-label">נפש (NEFESH):</span> <span class="nt-bar-track"><span class="nt-bar-fill" style="width:100%"></span></span> <span class="nt-value"> VITAL FORCE — 100%</span></div>
+    <div><span class="nt-label">SEPHIROT ANCHOR:</span> <span class="nt-value">תפארת (TIFERET)</span></div>
+
     <div class="nt-section">// MAGI VERDICT</div>
     <div>
       <span style="color:#ff4444;">MELCHIOR-1:</span> <span class="nt-value">APPROVED</span> &nbsp;
@@ -151,3 +333,288 @@ title: About
     <span><span class="nt-blink" style="color:#c00;">● REC</span></span>
   </div>
 </div>
+
+<div class="win-window seele-window" style="margin-top:16px;">
+  <div class="win-titlebar">
+    <span class="win-titlebar-title">SEELE — SEPHIROT COSMOLOGICAL SCHEMA [SCENARIO 01]</span>
+    <div class="win-titlebar-buttons">
+      <button class="win-btn">✕</button>
+    </div>
+  </div>
+  <svg class="seele-svg" viewBox="0 0 320 510" xmlns="http://www.w3.org/2000/svg" aria-label="Kabbalistic Tree of Life">
+    <!-- Background -->
+    <rect width="320" height="510" fill="#050505"/>
+
+    <!-- Pillar labels -->
+    <text x="260" y="16" fill="#444" font-size="8" text-anchor="middle" font-family="Courier New">MERCY</text>
+    <text x="160" y="16" fill="#444" font-size="8" text-anchor="middle" font-family="Courier New">BALANCE</text>
+    <text x="60"  y="16" fill="#444" font-size="8" text-anchor="middle" font-family="Courier New">SEVERITY</text>
+
+    <!-- 22 Paths — drawn first so nodes sit on top -->
+    <!-- Middle pillar descents -->
+    <line x1="160" y1="40"  x2="160" y2="270" stroke="#aa8800" stroke-width="0.8" opacity="0.6"/>
+    <line x1="160" y1="270" x2="160" y2="400" stroke="#aa8800" stroke-width="0.8" opacity="0.6"/>
+    <line x1="160" y1="400" x2="160" y2="465" stroke="#aa8800" stroke-width="0.8" opacity="0.6"/>
+    <!-- Right pillar descent -->
+    <line x1="260" y1="100" x2="260" y2="205" stroke="#0055aa" stroke-width="0.8" opacity="0.6"/>
+    <line x1="260" y1="205" x2="260" y2="335" stroke="#0055aa" stroke-width="0.8" opacity="0.6"/>
+    <!-- Left pillar descent -->
+    <line x1="60"  y1="100" x2="60"  y2="205" stroke="#880000" stroke-width="0.8" opacity="0.6"/>
+    <line x1="60"  y1="205" x2="60"  y2="335" stroke="#880000" stroke-width="0.8" opacity="0.6"/>
+    <!-- Horizontal crossings -->
+    <line x1="260" y1="100" x2="60"  y2="100" stroke="#333" stroke-width="0.8"/>
+    <line x1="260" y1="205" x2="60"  y2="205" stroke="#333" stroke-width="0.8"/>
+    <line x1="260" y1="335" x2="60"  y2="335" stroke="#333" stroke-width="0.8"/>
+    <!-- Keter diagonals -->
+    <line x1="160" y1="40"  x2="260" y2="100" stroke="#333" stroke-width="0.8"/>
+    <line x1="160" y1="40"  x2="60"  y2="100" stroke="#333" stroke-width="0.8"/>
+    <!-- Upper diagonals -->
+    <line x1="260" y1="100" x2="160" y2="270" stroke="#333" stroke-width="0.8"/>
+    <line x1="60"  y1="100" x2="160" y2="270" stroke="#333" stroke-width="0.8"/>
+    <!-- Mid diagonals -->
+    <line x1="260" y1="205" x2="160" y2="270" stroke="#333" stroke-width="0.8"/>
+    <line x1="60"  y1="205" x2="160" y2="270" stroke="#333" stroke-width="0.8"/>
+    <line x1="60"  y1="205" x2="260" y2="335" stroke="#333" stroke-width="0.8"/>
+    <line x1="260" y1="205" x2="60"  y2="335" stroke="#333" stroke-width="0.8"/>
+    <!-- Lower diagonals to Yesod -->
+    <line x1="260" y1="335" x2="160" y2="400" stroke="#333" stroke-width="0.8"/>
+    <line x1="60"  y1="335" x2="160" y2="400" stroke="#333" stroke-width="0.8"/>
+    <!-- Lower diagonals to Malkhut -->
+    <line x1="260" y1="335" x2="160" y2="465" stroke="#333" stroke-width="0.8"/>
+    <line x1="60"  y1="335" x2="160" y2="465" stroke="#333" stroke-width="0.8"/>
+
+    <!-- Da'at (hidden Sephira) — dashed -->
+    <circle cx="160" cy="145" r="14" fill="#050505" stroke="#aa8800" stroke-width="1" stroke-dasharray="3,2" opacity="0.5"/>
+    <text x="160" y="142" fill="#aa8800" font-size="7" text-anchor="middle" font-family="Courier New" opacity="0.5">דעת</text>
+    <text x="160" y="152" fill="#555" font-size="6" text-anchor="middle" font-family="Courier New" opacity="0.5">DA'AT</text>
+
+    <!-- Sephirot nodes -->
+    <!-- Keter (Crown) — middle gold -->
+    <circle cx="160" cy="40" r="22" fill="#050505" stroke="#cc9900" stroke-width="1.5"/>
+    <text x="160" y="37" fill="#cc9900" font-size="8.5" text-anchor="middle" font-family="Courier New">כתר</text>
+    <text x="160" y="48" fill="#00ccff" font-size="7" text-anchor="middle" font-family="Courier New">KETER</text>
+    <text x="160" y="68" fill="#555" font-size="6" text-anchor="middle" font-family="Courier New">Crown</text>
+
+    <!-- Chokhmah (Wisdom) — right blue -->
+    <circle cx="260" cy="100" r="22" fill="#050505" stroke="#0066cc" stroke-width="1.5"/>
+    <text x="260" y="97" fill="#0066cc" font-size="8.5" text-anchor="middle" font-family="Courier New">חכמה</text>
+    <text x="260" y="108" fill="#00ccff" font-size="7" text-anchor="middle" font-family="Courier New">CHOKHMAH</text>
+    <text x="260" y="128" fill="#555" font-size="6" text-anchor="middle" font-family="Courier New">Wisdom</text>
+
+    <!-- Binah (Understanding) — left red -->
+    <circle cx="60" cy="100" r="22" fill="#050505" stroke="#cc0000" stroke-width="1.5"/>
+    <text x="60" y="97" fill="#cc0000" font-size="8.5" text-anchor="middle" font-family="Courier New">בינה</text>
+    <text x="60" y="108" fill="#00ccff" font-size="7" text-anchor="middle" font-family="Courier New">BINAH</text>
+    <text x="60" y="128" fill="#555" font-size="6" text-anchor="middle" font-family="Courier New">Understanding</text>
+
+    <!-- Chesed (Kindness) — right blue -->
+    <circle cx="260" cy="205" r="22" fill="#050505" stroke="#0066cc" stroke-width="1.5"/>
+    <text x="260" y="202" fill="#0066cc" font-size="8.5" text-anchor="middle" font-family="Courier New">חסד</text>
+    <text x="260" y="213" fill="#00ccff" font-size="7" text-anchor="middle" font-family="Courier New">CHESED</text>
+    <text x="260" y="233" fill="#555" font-size="6" text-anchor="middle" font-family="Courier New">Kindness</text>
+
+    <!-- Gevurah (Strength) — left red -->
+    <circle cx="60" cy="205" r="22" fill="#050505" stroke="#cc0000" stroke-width="1.5"/>
+    <text x="60" y="202" fill="#cc0000" font-size="8.5" text-anchor="middle" font-family="Courier New">גבורה</text>
+    <text x="60" y="213" fill="#00ccff" font-size="7" text-anchor="middle" font-family="Courier New">GEVURAH</text>
+    <text x="60" y="233" fill="#555" font-size="6" text-anchor="middle" font-family="Courier New">Strength</text>
+
+    <!-- Tiferet (Beauty) — middle gold -->
+    <circle cx="160" cy="270" r="22" fill="#050505" stroke="#cc9900" stroke-width="1.5"/>
+    <text x="160" y="267" fill="#cc9900" font-size="8.5" text-anchor="middle" font-family="Courier New">תפארת</text>
+    <text x="160" y="278" fill="#00ccff" font-size="7" text-anchor="middle" font-family="Courier New">TIFERET</text>
+    <text x="160" y="298" fill="#555" font-size="6" text-anchor="middle" font-family="Courier New">Beauty</text>
+
+    <!-- Netzach (Victory) — right blue -->
+    <circle cx="260" cy="335" r="22" fill="#050505" stroke="#0066cc" stroke-width="1.5"/>
+    <text x="260" y="332" fill="#0066cc" font-size="8.5" text-anchor="middle" font-family="Courier New">נצח</text>
+    <text x="260" y="343" fill="#00ccff" font-size="7" text-anchor="middle" font-family="Courier New">NETZACH</text>
+    <text x="260" y="363" fill="#555" font-size="6" text-anchor="middle" font-family="Courier New">Victory</text>
+
+    <!-- Hod (Splendor) — left red -->
+    <circle cx="60" cy="335" r="22" fill="#050505" stroke="#cc0000" stroke-width="1.5"/>
+    <text x="60" y="332" fill="#cc0000" font-size="8.5" text-anchor="middle" font-family="Courier New">הוד</text>
+    <text x="60" y="343" fill="#00ccff" font-size="7" text-anchor="middle" font-family="Courier New">HOD</text>
+    <text x="60" y="363" fill="#555" font-size="6" text-anchor="middle" font-family="Courier New">Splendor</text>
+
+    <!-- Yesod (Foundation) — middle gold -->
+    <circle cx="160" cy="400" r="22" fill="#050505" stroke="#cc9900" stroke-width="1.5"/>
+    <text x="160" y="397" fill="#cc9900" font-size="8.5" text-anchor="middle" font-family="Courier New">יסוד</text>
+    <text x="160" y="408" fill="#00ccff" font-size="7" text-anchor="middle" font-family="Courier New">YESOD</text>
+    <text x="160" y="428" fill="#555" font-size="6" text-anchor="middle" font-family="Courier New">Foundation</text>
+
+    <!-- Malkhut (Kingdom) — middle gold -->
+    <circle cx="160" cy="465" r="22" fill="#050505" stroke="#cc9900" stroke-width="1.5"/>
+    <text x="160" y="462" fill="#cc9900" font-size="8.5" text-anchor="middle" font-family="Courier New">מלכות</text>
+    <text x="160" y="473" fill="#00ccff" font-size="7" text-anchor="middle" font-family="Courier New">MALKHUT</text>
+    <text x="160" y="492" fill="#555" font-size="6" text-anchor="middle" font-family="Courier New">Kingdom</text>
+
+    <!-- Footer annotation -->
+    <text x="160" y="506" fill="#333" font-size="6.5" text-anchor="middle" font-family="Courier New">INSTRUMENTALITY TARGET: MALKHUT → KETER</text>
+  </svg>
+  <div class="status-bar">
+    <span>DEAD SEA SCROLLS § APPENDIX 07</span>
+    <span style="margin-left:auto;">TREE OF LIFE ANALYSIS</span>
+  </div>
+</div>
+
+<!-- TREE OF LIFE & DUMMY PLUG TERMINAL — SIDE BY SIDE -->
+<div class="seele-dp-container">
+
+<div class="win-window seele-window">
+  <div class="win-titlebar">
+    <span class="win-titlebar-title">SEELE — SEPHIROT COSMOLOGICAL SCHEMA [SCENARIO 01]</span>
+    <div class="win-titlebar-buttons">
+      <button class="win-btn">✕</button>
+    </div>
+  </div>
+  <svg class="seele-svg" viewBox="0 0 320 510" xmlns="http://www.w3.org/2000/svg" aria-label="Kabbalistic Tree of Life">
+    <!-- Background -->
+    <rect width="320" height="510" fill="#050505"/>
+
+    <!-- Pillar labels -->
+    <text x="260" y="16" fill="#444" font-size="8" text-anchor="middle" font-family="Courier New">MERCY</text>
+    <text x="160" y="16" fill="#444" font-size="8" text-anchor="middle" font-family="Courier New">BALANCE</text>
+    <text x="60"  y="16" fill="#444" font-size="8" text-anchor="middle" font-family="Courier New">SEVERITY</text>
+
+    <!-- 22 Paths — drawn first so nodes sit on top -->
+    <!-- Middle pillar descents -->
+    <line x1="160" y1="40"  x2="160" y2="270" stroke="#aa8800" stroke-width="0.8" opacity="0.6"/>
+    <line x1="160" y1="270" x2="160" y2="400" stroke="#aa8800" stroke-width="0.8" opacity="0.6"/>
+    <line x1="160" y1="400" x2="160" y2="465" stroke="#aa8800" stroke-width="0.8" opacity="0.6"/>
+    <!-- Right pillar descent -->
+    <line x1="260" y1="100" x2="260" y2="205" stroke="#0055aa" stroke-width="0.8" opacity="0.6"/>
+    <line x1="260" y1="205" x2="260" y2="335" stroke="#0055aa" stroke-width="0.8" opacity="0.6"/>
+    <!-- Left pillar descent -->
+    <line x1="60"  y1="100" x2="60"  y2="205" stroke="#880000" stroke-width="0.8" opacity="0.6"/>
+    <line x1="60"  y1="205" x2="60"  y2="335" stroke="#880000" stroke-width="0.8" opacity="0.6"/>
+    <!-- Horizontal crossings -->
+    <line x1="260" y1="100" x2="60"  y2="100" stroke="#333" stroke-width="0.8"/>
+    <line x1="260" y1="205" x2="60"  y2="205" stroke="#333" stroke-width="0.8"/>
+    <line x1="260" y1="335" x2="60"  y2="335" stroke="#333" stroke-width="0.8"/>
+    <!-- Keter diagonals -->
+    <line x1="160" y1="40"  x2="260" y2="100" stroke="#333" stroke-width="0.8"/>
+    <line x1="160" y1="40"  x2="60"  y2="100" stroke="#333" stroke-width="0.8"/>
+    <!-- Upper diagonals -->
+    <line x1="260" y1="100" x2="160" y2="270" stroke="#333" stroke-width="0.8"/>
+    <line x1="60"  y1="100" x2="160" y2="270" stroke="#333" stroke-width="0.8"/>
+    <!-- Mid diagonals -->
+    <line x1="260" y1="205" x2="160" y2="270" stroke="#333" stroke-width="0.8"/>
+    <line x1="60"  y1="205" x2="160" y2="270" stroke="#333" stroke-width="0.8"/>
+    <line x1="60"  y1="205" x2="260" y2="335" stroke="#333" stroke-width="0.8"/>
+    <line x1="260" y1="205" x2="60"  y2="335" stroke="#333" stroke-width="0.8"/>
+    <!-- Lower diagonals to Yesod -->
+    <line x1="260" y1="335" x2="160" y2="400" stroke="#333" stroke-width="0.8"/>
+    <line x1="60"  y1="335" x2="160" y2="400" stroke="#333" stroke-width="0.8"/>
+    <!-- Lower diagonals to Malkhut -->
+    <line x1="260" y1="335" x2="160" y2="465" stroke="#333" stroke-width="0.8"/>
+    <line x1="60"  y1="335" x2="160" y2="465" stroke="#333" stroke-width="0.8"/>
+
+    <!-- Da'at (hidden Sephira) — dashed -->
+    <circle cx="160" cy="145" r="14" fill="#050505" stroke="#aa8800" stroke-width="1" stroke-dasharray="3,2" opacity="0.5"/>
+    <text x="160" y="142" fill="#aa8800" font-size="7" text-anchor="middle" font-family="Courier New" opacity="0.5">דעת</text>
+    <text x="160" y="152" fill="#555" font-size="6" text-anchor="middle" font-family="Courier New" opacity="0.5">DA'AT</text>
+
+    <!-- Sephirot nodes -->
+    <!-- Keter (Crown) — middle gold -->
+    <circle cx="160" cy="40" r="22" fill="#050505" stroke="#cc9900" stroke-width="1.5"/>
+    <text x="160" y="37" fill="#cc9900" font-size="8.5" text-anchor="middle" font-family="Courier New">כתר</text>
+    <text x="160" y="48" fill="#00ccff" font-size="7" text-anchor="middle" font-family="Courier New">KETER</text>
+    <text x="160" y="68" fill="#555" font-size="6" text-anchor="middle" font-family="Courier New">Crown</text>
+
+    <!-- Chokhmah (Wisdom) — right blue -->
+    <circle cx="260" cy="100" r="22" fill="#050505" stroke="#0066cc" stroke-width="1.5"/>
+    <text x="260" y="97" fill="#0066cc" font-size="8.5" text-anchor="middle" font-family="Courier New">חכמה</text>
+    <text x="260" y="108" fill="#00ccff" font-size="7" text-anchor="middle" font-family="Courier New">CHOKHMAH</text>
+    <text x="260" y="128" fill="#555" font-size="6" text-anchor="middle" font-family="Courier New">Wisdom</text>
+
+    <!-- Binah (Understanding) — left red -->
+    <circle cx="60" cy="100" r="22" fill="#050505" stroke="#cc0000" stroke-width="1.5"/>
+    <text x="60" y="97" fill="#cc0000" font-size="8.5" text-anchor="middle" font-family="Courier New">בינה</text>
+    <text x="60" y="108" fill="#00ccff" font-size="7" text-anchor="middle" font-family="Courier New">BINAH</text>
+    <text x="60" y="128" fill="#555" font-size="6" text-anchor="middle" font-family="Courier New">Understanding</text>
+
+    <!-- Chesed (Kindness) — right blue -->
+    <circle cx="260" cy="205" r="22" fill="#050505" stroke="#0066cc" stroke-width="1.5"/>
+    <text x="260" y="202" fill="#0066cc" font-size="8.5" text-anchor="middle" font-family="Courier New">חסד</text>
+    <text x="260" y="213" fill="#00ccff" font-size="7" text-anchor="middle" font-family="Courier New">CHESED</text>
+    <text x="260" y="233" fill="#555" font-size="6" text-anchor="middle" font-family="Courier New">Kindness</text>
+
+    <!-- Gevurah (Strength) — left red -->
+    <circle cx="60" cy="205" r="22" fill="#050505" stroke="#cc0000" stroke-width="1.5"/>
+    <text x="60" y="202" fill="#cc0000" font-size="8.5" text-anchor="middle" font-family="Courier New">גבורה</text>
+    <text x="60" y="213" fill="#00ccff" font-size="7" text-anchor="middle" font-family="Courier New">GEVURAH</text>
+    <text x="60" y="233" fill="#555" font-size="6" text-anchor="middle" font-family="Courier New">Strength</text>
+
+    <!-- Tiferet (Beauty) — middle gold -->
+    <circle cx="160" cy="270" r="22" fill="#050505" stroke="#cc9900" stroke-width="1.5"/>
+    <text x="160" y="267" fill="#cc9900" font-size="8.5" text-anchor="middle" font-family="Courier New">תפארת</text>
+    <text x="160" y="278" fill="#00ccff" font-size="7" text-anchor="middle" font-family="Courier New">TIFERET</text>
+    <text x="160" y="298" fill="#555" font-size="6" text-anchor="middle" font-family="Courier New">Beauty</text>
+
+    <!-- Netzach (Victory) — right blue -->
+    <circle cx="260" cy="335" r="22" fill="#050505" stroke="#0066cc" stroke-width="1.5"/>
+    <text x="260" y="332" fill="#0066cc" font-size="8.5" text-anchor="middle" font-family="Courier New">נצח</text>
+    <text x="260" y="343" fill="#00ccff" font-size="7" text-anchor="middle" font-family="Courier New">NETZACH</text>
+    <text x="260" y="363" fill="#555" font-size="6" text-anchor="middle" font-family="Courier New">Victory</text>
+
+    <!-- Hod (Splendor) — left red -->
+    <circle cx="60" cy="335" r="22" fill="#050505" stroke="#cc0000" stroke-width="1.5"/>
+    <text x="60" y="332" fill="#cc0000" font-size="8.5" text-anchor="middle" font-family="Courier New">הוד</text>
+    <text x="60" y="343" fill="#00ccff" font-size="7" text-anchor="middle" font-family="Courier New">HOD</text>
+    <text x="60" y="363" fill="#555" font-size="6" text-anchor="middle" font-family="Courier New">Splendor</text>
+
+    <!-- Yesod (Foundation) — middle gold -->
+    <circle cx="160" cy="400" r="22" fill="#050505" stroke="#cc9900" stroke-width="1.5"/>
+    <text x="160" y="397" fill="#cc9900" font-size="8.5" text-anchor="middle" font-family="Courier New">יסוד</text>
+    <text x="160" y="408" fill="#00ccff" font-size="7" text-anchor="middle" font-family="Courier New">YESOD</text>
+    <text x="160" y="428" fill="#555" font-size="6" text-anchor="middle" font-family="Courier New">Foundation</text>
+
+    <!-- Malkhut (Kingdom) — middle gold -->
+    <circle cx="160" cy="465" r="22" fill="#050505" stroke="#cc9900" stroke-width="1.5"/>
+    <text x="160" y="462" fill="#cc9900" font-size="8.5" text-anchor="middle" font-family="Courier New">מלכות</text>
+    <text x="160" y="473" fill="#00ccff" font-size="7" text-anchor="middle" font-family="Courier New">MALKHUT</text>
+    <text x="160" y="492" fill="#555" font-size="6" text-anchor="middle" font-family="Courier New">Kingdom</text>
+
+    <!-- Footer annotation -->
+    <text x="160" y="506" fill="#333" font-size="6.5" text-anchor="middle" font-family="Courier New">INSTRUMENTALITY TARGET: MALKHUT → KETER</text>
+  </svg>
+  <div class="status-bar">
+    <span>DEAD SEA SCROLLS § APPENDIX 07</span>
+    <span style="margin-left:auto;">TREE OF LIFE ANALYSIS</span>
+  </div>
+</div>
+
+<div class="win-window dp-window">
+  <div class="win-titlebar">
+    <span class="win-titlebar-title">DUMMY PLUG SYSTEM — INITIALIZATION SEQUENCE [AUTO]</span>
+    <div class="win-titlebar-buttons">
+      <button class="win-btn">✕</button>
+    </div>
+  </div>
+  <div class="dp-terminal">
+    <div class="dp-header">▸ GEHIRN OS v2.11 — DUMMY PLUG BOOTSTRAP ▸</div>
+    <div class="dp-line"><span class="dp-sys">BOOT&gt;</span> Initializing GEHIRN kernel.................. <span class="dp-ok">[OK]</span></div>
+    <div class="dp-line"><span class="dp-sys">BOOT&gt;</span> Loading personality fragment: <span class="dp-highlight">NYA</span></div>
+    <div class="dp-line"><span class="dp-sys">CORE&gt;</span> Mounting soul module (נשמה).................. <span class="dp-ok">[OK]</span></div>
+    <div class="dp-line"><span class="dp-sys">CORE&gt;</span> Spirit interface (רוח) synchronizing......... <span class="dp-ok">[OK]</span></div>
+    <div class="dp-line"><span class="dp-sys">CORE&gt;</span> Vital force (נפש) nominal................... <span class="dp-ok">[OK]</span></div>
+    <div class="dp-line"><span class="dp-sys">SYNC&gt;</span> Establishing neural link..................... <span class="dp-ok">[CONNECTED]</span></div>
+    <div class="dp-line"><span class="dp-sys">SYNC&gt;</span> Synchronization rate: <span class="dp-highlight">94.2%</span></div>
+    <div class="dp-line"><span class="dp-dim">  ├─ networking.module ......... LOADED</span></div>
+    <div class="dp-line"><span class="dp-dim">  ├─ infrastructure.layer ..... LOADED</span></div>
+    <div class="dp-line"><span class="dp-dim">  ├─ anime.database ........... LOADED (WARNING: 98% FULL)</span></div>
+    <div class="dp-line"><span class="dp-dim">  ├─ catgirl.affinity ......... LOADED</span></div>
+    <div class="dp-line"><span class="dp-dim">  └─ cringe.inhibitor ......... <span class="dp-err">NOT FOUND</span></span></div>
+    <div class="dp-line"><span class="dp-sys">PLUG&gt;</span> LCL flooding entry plug..................... <span class="dp-ok">[OK]</span></div>
+    <div class="dp-line"><span class="dp-sys">PLUG&gt;</span> A10 nerve connections established</div>
+    <div class="dp-line"><span class="dp-sys">MAGI&gt;</span> All systems nominal. Awaiting pilot.</div>
+    <div class="dp-line">&nbsp;</div>
+    <div class="dp-line"><span class="dp-highlight">DUMMY PLUG SYSTEM: READY</span> <span class="dp-cursor"></span></div>
+  </div>
+  <div class="status-bar">
+    <span>PRIBNOW BOX · CAGE-07</span>
+    <span style="margin-left:auto;">PLUG DEPTH: 0.00</span>
+  </div>
+</div>
+</div><!-- end seele-dp-container -->
