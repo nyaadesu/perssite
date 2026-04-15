@@ -184,7 +184,6 @@ title: About
     color: #00cc44;
     line-height: 1.8;
     border: 1px solid #003300;
-    min-height: 200px;
   }
   .dp-terminal .dp-header {
     color: #00ff66;
@@ -237,10 +236,12 @@ title: About
   .seele-dp-container {
     display: flex;
     gap: 16px;
-    margin-top: 16px;
+    margin: 16px 0 0 0;
+    width: 100%;
+    box-sizing: border-box;
   }
   .seele-dp-container .win-window {
-    flex: 1 !important;
+    flex: 1 1 auto !important;
     margin-top: 0;
   }
   .seele-dp-container .seele-window {
@@ -248,6 +249,7 @@ title: About
   }
   .seele-dp-container .dp-window {
     min-width: 0;
+    align-self: flex-start;
   }
   @media (max-width: 800px) {
     .seele-dp-container {
@@ -258,15 +260,27 @@ title: About
   /* Make NERV window same width as side-by-side container */
   .nerv-window {
     width: 100%;
-    margin-top: 16px;
+    margin: 16px 0 0 0;
+    box-sizing: border-box;
+    max-width: none;
   }
 
   /* Reduce status bar height */
-  .nerv-window .status-bar,
+  .nerv-window .status-bar {
+    height: 21px;
+    padding: 0 4px;
+  }
+  .dp-window {
+    display: flex;
+    flex-direction: column;
+  }
+  .dp-window .dp-terminal {
+    flex: 1;
+  }
   .dp-window .status-bar {
-    height: 16px;
-    padding: 2px 4px;
-    font-size: 11px;
+    height: 21px;
+    padding: 0 4px;
+    flex-shrink: 0;
   }
 </style>
 
@@ -331,13 +345,6 @@ title: About
     <div><span class="nt-label">רוח (RUACH):</span> <span class="nt-bar-track"><span class="nt-bar-fill" style="width:94%"></span></span> <span class="nt-value"> SPIRIT / EMOTION — 94%</span></div>
     <div><span class="nt-label">נפש (NEFESH):</span> <span class="nt-bar-track"><span class="nt-bar-fill" style="width:100%"></span></span> <span class="nt-value"> VITAL FORCE — 100%</span></div>
     <div><span class="nt-label">SEPHIROT ANCHOR:</span> <span class="nt-value">תפארת (TIFERET)</span></div>
-
-    <div class="nt-section">// MAGI VERDICT</div>
-    <div>
-      <span style="color:#ff4444;">MELCHIOR-1:</span> <span class="nt-value">APPROVED</span> &nbsp;
-      <span style="color:#ff4444;">BALTHASAR-2:</span> <span class="nt-value">APPROVED</span> &nbsp;
-      <span style="color:#ff4444;">CASPAR-3:</span> <span class="nt-value">APPROVED</span>
-    </div>
 
     <div style="margin-top:14px;color:#004466;">████████████████████████████████████████████████████████████</div>
     <div style="color:#004466;font-size:10px;">NERV/MAGI SYS v3.0 · GEHIRN RESEARCH · <span class="nt-blink">▌</span></div>
