@@ -40,7 +40,7 @@ body {
   top: 36px;
   left: 0;
   width: 110px;
-  z-index: 1;
+  z-index: 0;
   pointer-events: none;
 }
 
@@ -57,10 +57,12 @@ body {
   pointer-events: auto;
 }
 
-.desktop-icon:nth-child(1) { top: 8px;   left: 14px; transform: rotate(-2deg); }
-.desktop-icon:nth-child(2) { top: 96px;  left: 28px; transform: rotate(1.5deg); }
-.desktop-icon:nth-child(3) { top: 188px; left: 10px; transform: rotate(-0.5deg); }
-.desktop-icon:nth-child(4) { top: 276px; left: 22px; transform: rotate(2deg); }
+/* Slightly messy desktop: each icon at its own offset, but not rotated
+   so the artwork stays pixel-aligned. */
+.desktop-icon:nth-child(1) { top: 8px;   left: 14px; }
+.desktop-icon:nth-child(2) { top: 96px;  left: 28px; }
+.desktop-icon:nth-child(3) { top: 188px; left: 10px; }
+.desktop-icon:nth-child(4) { top: 276px; left: 22px; }
 
 .desktop-icon {
   display: flex;
@@ -114,6 +116,8 @@ body {
   gap: 16px;
   overflow-y: auto;
   padding-bottom: 60px; /* space for taskbar */
+  position: relative;
+  z-index: 1;
 }
 
 /* ===== PRIDE STRIPE ===== */
@@ -258,6 +262,8 @@ body {
   box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, 2px 2px 0 #000;
   width: 100%;
   max-width: 680px;
+  display: flex;
+  flex-direction: column;
 }
 
 .win-window.wide {
@@ -322,6 +328,15 @@ body {
 
 .win-content {
   padding: 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Push the actions row to the bottom of the content so the status bar
+   below it always sticks to the bottom of the window. */
+.win-content .win-actions {
+  margin-top: auto;
 }
 
 /* ===== HOME PAGE ===== */
@@ -500,6 +515,16 @@ body {
   color: var(--win98-dark);
   display: flex;
   gap: 12px;
+  align-items: center;
+  min-height: 20px;
+}
+
+/* Action row at the bottom of a window's content (above the status bar) */
+.win-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
 }
 
 /* ===== LINKS ===== */

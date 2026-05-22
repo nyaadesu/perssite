@@ -54,10 +54,13 @@ title: Home
       {% else %}
         <p data-i18n="no-posts">No posts yet. Check back soon!</p>
       {% endif %}
+      <div class="win-actions">
+        <a href="/blog/" class="win98-btn" data-i18n="view-all-posts">View all posts →</a>
+        <a href="/feed.xml" class="win98-btn" title="RSS Feed" style="margin-left:auto;">📡 RSS</a>
+      </div>
     </div>
     <div class="status-bar">
-      <span><a href="/blog/" class="win98-btn" data-i18n="view-all-posts">View all posts →</a></span>
-      <span style="margin-left:auto;"><a href="/feed.xml" class="win98-btn" title="RSS Feed">📡 RSS</a></span>
+      <span>{{ collections.posts.length }} post(s)</span>
     </div>
   </div>
 
