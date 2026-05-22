@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <!-- Win98 3D bevel: white top/left, dark gray bottom/right, navy fill -->
+  <rect x="2"  y="2"  width="28" height="28" fill="#ffffff"/>
+  <rect x="3"  y="3"  width="27" height="27" fill="#808080"/>
+  <rect x="3"  y="3"  width="26" height="26" fill="#000080"/>
+  <!-- inner 1px highlight on top/left of navy field -->
+  <rect x="3"  y="3"  width="26" height="1"  fill="#0000c0"/>
+  <rect x="3"  y="3"  width="1"  height="26" fill="#0000c0"/>
+  <!-- letter "i" (lowercase) -->
+  <rect x="7"  y="9"  width="3" height="3"  fill="#ffffff"/>
+  <rect x="7"  y="13" width="3" height="11" fill="#ffffff"/>
+  <!-- letter "n" -->
+  <rect x="13" y="13" width="3" height="11" fill="#ffffff"/>
+  <rect x="13" y="13" width="9" height="3"  fill="#ffffff"/>
+  <rect x="19" y="13" width="3" height="11" fill="#ffffff"/>
+</svg>
