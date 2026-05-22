@@ -28,7 +28,82 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  position: relative;
 }
+
+/* ===== DESKTOP ICONS ===== */
+/* Absolutely positioned so they sit on the teal desktop without shifting
+   the centered main content. Each icon is nudged into a slightly messy,
+   not-quite-aligned arrangement, like a real desktop. */
+.desktop-icons {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  width: 110px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  width: 72px;
+  padding: 4px;
+  gap: 4px;
+  position: absolute;
+  pointer-events: auto;
+}
+
+.desktop-icon:nth-child(1) { top: 8px;   left: 14px; transform: rotate(-2deg); }
+.desktop-icon:nth-child(2) { top: 96px;  left: 28px; transform: rotate(1.5deg); }
+.desktop-icon:nth-child(3) { top: 188px; left: 10px; transform: rotate(-0.5deg); }
+.desktop-icon:nth-child(4) { top: 276px; left: 22px; transform: rotate(2deg); }
+
+.desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  width: 72px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.desktop-icon img {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+}
+
+.desktop-icon span {
+  color: #ffffff;
+  font-size: 11px;
+  line-height: 1.15;
+  padding: 1px 3px;
+  text-shadow: 1px 1px 0 #000000;
+  border: 1px dotted transparent;
+}
+
+.desktop-icon:hover span,
+.desktop-icon:focus span {
+  background: var(--win98-title);
+  text-shadow: none;
+  border-color: #ffff00;
+}
+
+.desktop-icon:focus {
+  outline: none;
+}
+
+.desktop-icon:hover img,
+.desktop-icon:focus img {
+  filter: brightness(0.85) sepia(0.4) hue-rotate(190deg) saturate(2);
+}
+
 
 .desktop-area {
   flex: 1;
