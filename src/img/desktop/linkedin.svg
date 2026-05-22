@@ -7,10 +7,10 @@
   <rect x="3"  y="3"  width="26" height="1"  fill="#0000c0"/>
   <rect x="3"  y="3"  width="1"  height="26" fill="#0000c0"/>
   <!-- letter "i" (lowercase) -->
-  <rect x="7"  y="9"  width="3" height="3"  fill="#ffffff"/>
-  <rect x="7"  y="13" width="3" height="11" fill="#ffffff"/>
+  <rect x="9"  y="9"  width="3" height="3"  fill="#ffffff"/>
+  <rect x="9"  y="13" width="3" height="11" fill="#ffffff"/>
   <!-- letter "n" -->
-  <rect x="13" y="13" width="3" height="11" fill="#ffffff"/>
-  <rect x="13" y="13" width="9" height="3"  fill="#ffffff"/>
-  <rect x="19" y="13" width="3" height="11" fill="#ffffff"/>
+  <rect x="15" y="13" width="3" height="11" fill="#ffffff"/>
+  <rect x="15" y="13" width="9" height="3"  fill="#ffffff"/>
+  <rect x="21" y="13" width="3" height="11" fill="#ffffff"/>
 </svg>
